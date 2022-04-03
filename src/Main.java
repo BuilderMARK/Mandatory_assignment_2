@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
+        /*
         BinaryTreeNode n1 = new BinaryTreeNode(40);
         BinaryTreeNode n2 = new BinaryTreeNode(20);
         BinaryTreeNode n3 = new BinaryTreeNode(10);
@@ -35,7 +36,23 @@ public class Main {
 
         System.out.println("IN ORDER;");
         System.out.println(tree.inOrder(tree.getRoot()));
+        */
 
-        ;
+        BinarySearchTree tree = new BinarySearchTree(50);
+        tree.insert(tree.getRoot(),30);
+        tree.insert(tree.getRoot(),20);
+        tree.insert(tree.getRoot(),40);
+        tree.insert(tree.getRoot(),70);
+        tree.insert(tree.getRoot(),60);
+        tree.insert(tree.getRoot(),80);
+
+        System.out.println(tree.inOrder(tree.getRoot()));
+
+        System.out.println(tree.preorder(tree.getRoot()));
+
+        System.out.println(tree.Postorder(tree.getRoot()));
+
+
+
     }
 }

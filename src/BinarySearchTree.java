@@ -3,9 +3,28 @@ public class BinarySearchTree <E extends Comparable<E>> extends BinaryTree<E> {
 
     private BinaryTreeNode root;
 
-    public boolean insert(E element){
-        // TODO: 03-04-2022
-        return true;
+    @Override
+    public BinaryTreeNode getRoot() {
+        return root;
+    }
+
+    BinarySearchTree() { root = null; }
+
+    BinarySearchTree(int value) { root = new BinaryTreeNode(value); }
+
+
+    public BinaryTreeNode insert(BinaryTreeNode root, int value){
+        if (root == null) {
+            root = new BinaryTreeNode(value);
+            return root;
+        }
+
+        if (value < root.getElement().intValue())
+            root.addLeftChild(insert(root.getLeftChild(), value));
+        else if (value > root.getElement().intValue())
+            root.addRightChild(insert(root.getRightChild(), value));
+
+        return root;
     }
 
     public boolean removeElement(E element){

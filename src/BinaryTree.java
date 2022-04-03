@@ -11,6 +11,7 @@ public class BinaryTree<E>{
     private ArrayList empty = new ArrayList();
     private ArrayList<Integer> inOrderArray = new ArrayList();
     private ArrayList<Integer> PreOrderArray = new ArrayList();
+    private ArrayList<Integer> PostOrderArray = new ArrayList<>();
 
 
     public BinaryTreeNode getRoot() {
@@ -72,11 +73,8 @@ public class BinaryTree<E>{
         };
         inOrderArray.add(node.getElement().intValue());
         inOrder(node.getLeftChild());
-        System.out.printf("%s ", node.getElement().floatValue());
         inOrder(node.getRightChild());
         Collections.sort(inOrderArray);
-
-
 
         return inOrderArray;
     }
@@ -91,10 +89,10 @@ public class BinaryTree<E>{
         return PreOrderArray;
     }
 
-    void Postorder(BinaryTreeNode node)
+    public ArrayList<Integer> Postorder(BinaryTreeNode node)
     {
         if (node == null)
-            return;
+            return null;
 
         // first recur on left subtree
         Postorder(node.getLeftChild());
@@ -103,7 +101,10 @@ public class BinaryTree<E>{
         Postorder(node.getRightChild());
 
         // now deal with the node
-        System.out.print(node.getElement() + " ");
+
+        PostOrderArray.add(node.getElement().intValue());
+        return PostOrderArray;
+       // System.out.print(node.getElement() + " ");
     }
 
 
