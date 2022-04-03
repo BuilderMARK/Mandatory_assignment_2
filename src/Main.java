@@ -38,6 +38,8 @@ public class Main {
         System.out.println(tree.inOrder(tree.getRoot()));
         */
 
+        /*
+
         BinarySearchTree tree = new BinarySearchTree(50);
         tree.insert(tree.getRoot(),30);
         tree.insert(tree.getRoot(),20);
@@ -54,14 +56,35 @@ public class Main {
 
         System.out.println(tree.Postorder(tree.getRoot()));
         tree.insert(tree.getRoot(),190);
+
+        System.out.println("Rebalance");
         tree.rebalance();
-
         System.out.println(tree.inOrder(tree.getRoot()));
-
         System.out.println(tree.preorder(tree.getRoot()));
-
         System.out.println(tree.Postorder(tree.getRoot()));
 
+
+        */
+
+
+        BinaryTreeNode n1 = new BinaryTreeNode(40);
+        BinaryTreeNode n2 = new BinaryTreeNode(20);
+        BinaryTreeNode n3 = new BinaryTreeNode(10);
+        BinaryTreeNode n4 = new BinaryTreeNode(30);
+        BinaryTreeNode n5 = new BinaryTreeNode(60);
+        BinaryTreeNode n6 = new BinaryTreeNode(50);
+        BinaryTreeNode n7 = new BinaryTreeNode(70);
+
+        n1.addLeftChild(n2);
+        n1.addRightChild(n5);
+
+        n2.addLeftChild(n3);
+        n3.addLeftChild(n4);
+
+        BinarySearchTree tree = new BinarySearchTree(50);
+        tree.setRoot(n1);
+        tree.rebalance();
+        System.out.println(tree.preorder(n1));
 
 
     }

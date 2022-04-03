@@ -78,11 +78,11 @@ public class BinarySearchTree <E extends Comparable<E>> extends BinaryTree<E> {
 
     public void rebalance(){
         ArrayList<Integer> tmp = new ArrayList();
-        tmp = inOrder(root);
+        tmp = Postorder(root);
 
-        root = null;
+        reset();
         for (Integer i :tmp){
-            insert(root, i.intValue());
+            root = insert(root, i.intValue());
         }
     }
 }

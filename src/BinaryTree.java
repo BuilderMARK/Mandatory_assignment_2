@@ -14,7 +14,7 @@ public class BinaryTree<E>{
 
     public void reset() {
         inOrderArray = new ArrayList();
-                PreOrderArray= new ArrayList();
+        PreOrderArray= new ArrayList();
         PostOrderArray= new ArrayList();
     }
 
