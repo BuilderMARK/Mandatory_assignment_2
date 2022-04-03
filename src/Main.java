@@ -15,5 +15,6 @@ public class Main {
         tree.setRoot(n1);
         System.out.println(tree.size());
         System.out.println(tree.contains(nNotInTree));
+        System.out.println(tree.height());
     }
 }

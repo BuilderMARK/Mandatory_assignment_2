@@ -88,7 +88,23 @@ public class BinaryTree<E>{
     }
 
     public int height(){
-        return -1;
+        if(root == null)
+            return 0;
+        else
+            return height(root);
+    }
+
+    private int height(BinaryTreeNode e){
+        int left = 0, right = 0;
+        if(e.getLeftChild() != null)
+            left = height(e.getLeftChild());
+
+        if(e.getRightChild() != null)
+            right = height(e.getRightChild());
+
+
+        int max = (left > right) ? left : right;
+        return max+1;
     }
 
 }
