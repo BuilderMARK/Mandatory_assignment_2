@@ -36,4 +36,5 @@ public class BinaryTreeNode<E extends Number> implements Comparable<BinaryTreeNo
     public int compareTo(BinaryTreeNode<E> o) {
         return 0;
     }
+
 }

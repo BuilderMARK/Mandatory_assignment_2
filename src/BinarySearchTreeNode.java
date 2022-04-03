@@ -5,7 +5,7 @@ public class BinarySearchTreeNode<E>
 
 
     public BinarySearchTreeNode(Number element) {
-        super(element);
+        //super(element);
         // TODO: 03-04-2022 Skal laves om vi compare til det samme element
     }
 }
