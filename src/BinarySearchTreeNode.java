@@ -1,4 +1,4 @@
-public class BinarySearchTreeNode<E>
+public class BinarySearchTreeNode<E extends Number> extends BinaryTreeNode<E>
 {
     private BinaryTreeNode leftChild, rightChild;
     private E element;

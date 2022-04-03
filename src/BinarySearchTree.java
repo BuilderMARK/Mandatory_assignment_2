@@ -1,8 +1,7 @@
 public class BinarySearchTree <E extends Comparable<E>> extends BinaryTree<E> {
+
+
     private BinarySearchTreeNode<E> root;
-
-
-
 
     public boolean insert(E element){
         // TODO: 03-04-2022

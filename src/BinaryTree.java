@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class BinaryTree {
+public class BinaryTree<E>{
 
     private BinaryTreeNode root;
     private int size;
