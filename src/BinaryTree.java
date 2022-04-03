@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Stack;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class BinaryTree<E>{
     private BinaryTreeNode root;
@@ -110,7 +109,20 @@ public class BinaryTree<E>{
 
 
     public ArrayList<E> levelOrder(){
-        return empty;
+        ArrayList sorted = new ArrayList();
+        Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+        q.add(root);
+        while(!q.isEmpty()){
+            BinaryTreeNode tmp = q.poll();
+            sorted.add(tmp.getElement());
+
+            if(tmp.getLeftChild() != null)
+                q.add(tmp.getLeftChild());
+            if(tmp.getRightChild() != null)
+                q.add(tmp.getRightChild());
+        }
+
+        return sorted;
 
     }
 

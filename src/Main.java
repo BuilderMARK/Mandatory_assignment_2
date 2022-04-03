@@ -36,6 +36,10 @@ public class Main {
         System.out.println("IN ORDER;");
         System.out.println(tree.inOrder(tree.getRoot()));
 
+        System.out.println("LEVEL ORDER;");
+        System.out.println(tree.levelOrder());
+
         ;
     }
 }
+
