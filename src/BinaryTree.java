@@ -7,6 +7,7 @@ public class BinaryTree<E>{
 
     // bare lige for ingen errors
     private ArrayList empty = new ArrayList();
+    private ArrayList<BinaryTreeNode> inOrderArray = new ArrayList();
 
 
     public BinaryTreeNode getRoot() {
@@ -41,13 +42,15 @@ public class BinaryTree<E>{
         return false;
     }
 
-    public ArrayList<E> inOrder(){
-        if(root == null)
-            return empty;
-        else {
-            //return inorder
-            return empty;
-        }
+    public ArrayList<BinaryTreeNode> inOrder(BinaryTreeNode node){
+        if (node == null) {
+            return null;
+        };
+        inOrderArray.add(node);
+        inOrder(node.getLeftChild());
+        System.out.printf("%s ", node.getElement().floatValue());
+        inOrder(node.getRightChild());
+        return inOrderArray;
     }
 
     public ArrayList<E> preorder(){
