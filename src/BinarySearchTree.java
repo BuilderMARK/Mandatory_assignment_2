@@ -33,9 +33,28 @@ public class BinarySearchTree <E extends Comparable<E>> extends BinaryTree<E> {
     }
 
     public boolean contains(E element){
-        // TODO: 03-04-2022
-        return true;
+        if(root == null)
+            return false;
+        else
+            return contains(element, root);
     }
+
+    private boolean contains(E element, BinaryTreeNode node){
+        if(node == null)
+            return false;
+
+        int comp = element.compareTo((E) node.getElement());
+        System.out.println(comp);
+
+        if(comp < 0)
+            return contains(element,root.getLeftChild());
+        else if(comp > 0)
+            return contains(element, root.getRightChild());
+        else
+            return true;
+    }
+
+
     public void rebalance(){
         // TODO: 03-04-2022
         System.out.println("Lav senere");

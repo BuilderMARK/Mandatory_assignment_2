@@ -23,7 +23,6 @@ public class Main {
         BinaryTree tree = new BinaryTree();
         tree.setRoot(n1);
 
-
         System.out.println("POST ORDER;");
         tree.Postorder(tree.getRoot());
         System.out.println(" ");
@@ -39,7 +38,10 @@ public class Main {
         System.out.println("LEVEL ORDER;");
         System.out.println(tree.levelOrder());
 
-        ;
+
+        BinaryTree searchTree = new BinarySearchTree();
+        searchTree.setRoot(n1);
+
     }
 }
 
