@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
-public class BinaryTree {
-
+public class BinaryTree<E>{
     private BinaryTreeNode root;
     private int size;
     private int height;
@@ -26,7 +25,15 @@ public class BinaryTree {
     }
 
     public int size(){
-        return size;
+        return (size(root));
+    }
+
+    private int size(BinaryTreeNode node){
+        if(node == null)
+            return 0;
+        else {
+            return (size(node.getLeftChild()) + 1 + size(node.getRightChild()));
+        }
     }
 
     public boolean contains(E element){
