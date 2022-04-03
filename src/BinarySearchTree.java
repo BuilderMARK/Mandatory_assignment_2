@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BinarySearchTree <E extends Comparable<E>> extends BinaryTree<E> {
 
 
@@ -75,7 +77,12 @@ public class BinarySearchTree <E extends Comparable<E>> extends BinaryTree<E> {
 
 
     public void rebalance(){
-        // TODO: 03-04-2022
-        System.out.println("Lav senere");
+        ArrayList<Integer> tmp = new ArrayList();
+        tmp = inOrder(root);
+
+        root = null;
+        for (Integer i :tmp){
+            insert(root, i.intValue());
+        }
     }
 }
