@@ -41,9 +41,30 @@ public class BinaryTree<E>{
     }
 
     public boolean contains(E element){
-        //search?
-        return false;
+        if(root == null)
+            return false;
+        else {
+            ArrayList workaround = new ArrayList();
+            workaround = inOrder(root);
+            return workaround.contains(element);
+        }
     }
+
+    /*
+    private boolean contains(E element, BinaryTreeNode node){
+        if(node == null)
+            return false;
+
+        int comp = node.compareTo(element);
+        System.out.println(comp);
+
+        if(comp < 0)
+            return contains(element,root.getLeftChild());
+        else if(comp > 0)
+            return contains(element, root.getRightChild());
+        else
+            return true;
+    }*/
 
     public ArrayList<Integer> inOrder(BinaryTreeNode node){
         if (node == null) {
@@ -51,6 +72,7 @@ public class BinaryTree<E>{
         };
         inOrderArray.add(node.getElement().intValue());
         inOrder(node.getLeftChild());
+        System.out.printf("%s ", node.getElement().floatValue());
         inOrder(node.getRightChild());
         Collections.sort(inOrderArray);
 
