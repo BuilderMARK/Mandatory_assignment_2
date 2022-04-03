@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Stack;
 
 public class BinaryTree<E>{
     private BinaryTreeNode root;
@@ -7,7 +9,8 @@ public class BinaryTree<E>{
 
     // bare lige for ingen errors
     private ArrayList empty = new ArrayList();
-    private ArrayList<BinaryTreeNode> inOrderArray = new ArrayList();
+    private ArrayList<Integer> inOrderArray = new ArrayList();
+    private ArrayList<Integer> PreOrderArray = new ArrayList();
 
 
     public BinaryTreeNode getRoot() {
@@ -42,25 +45,47 @@ public class BinaryTree<E>{
         return false;
     }
 
-    public ArrayList<BinaryTreeNode> inOrder(BinaryTreeNode node){
+    public ArrayList<Integer> inOrder(BinaryTreeNode node){
         if (node == null) {
             return null;
         };
-        inOrderArray.add(node);
+        inOrderArray.add(node.getElement().intValue());
         inOrder(node.getLeftChild());
-        System.out.printf("%s ", node.getElement().floatValue());
         inOrder(node.getRightChild());
+        Collections.sort(inOrderArray);
+
+
+
         return inOrderArray;
     }
 
-    public ArrayList<E> preorder(){
-    return empty;
+    public ArrayList<Integer> preorder(BinaryTreeNode node){
+        if (node == null) {
+            return null;
+        };
+        PreOrderArray.add(node.getElement().intValue());
+        preorder(node.getLeftChild());
+        preorder(node.getRightChild());
+        return PreOrderArray;
     }
 
-    public ArrayList<E> postOrder(){
-        return empty;
+    void Postorder(BinaryTreeNode node)
+    {
+        if (node == null)
+            return;
 
+        // first recur on left subtree
+        Postorder(node.getLeftChild());
+
+        // then recur on right subtree
+        Postorder(node.getRightChild());
+
+        // now deal with the node
+        System.out.print(node.getElement() + " ");
     }
+
+
+
 
     public ArrayList<E> levelOrder(){
         return empty;
