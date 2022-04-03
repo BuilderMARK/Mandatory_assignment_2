@@ -45,6 +45,16 @@ public class Main {
         tree.insert(tree.getRoot(),70);
         tree.insert(tree.getRoot(),60);
         tree.insert(tree.getRoot(),80);
+        tree.insert(tree.getRoot(),1);
+
+
+        System.out.println(tree.inOrder(tree.getRoot()));
+
+        System.out.println(tree.preorder(tree.getRoot()));
+
+        System.out.println(tree.Postorder(tree.getRoot()));
+        tree.insert(tree.getRoot(),190);
+        tree.rebalance();
 
         System.out.println(tree.inOrder(tree.getRoot()));
 

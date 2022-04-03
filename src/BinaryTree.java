@@ -12,6 +12,11 @@ public class BinaryTree<E>{
     private ArrayList<Integer> PreOrderArray = new ArrayList();
     private ArrayList<Integer> PostOrderArray = new ArrayList<>();
 
+    public void reset() {
+        inOrderArray = new ArrayList();
+                PreOrderArray= new ArrayList();
+        PostOrderArray= new ArrayList();
+    }
 
     public BinaryTreeNode getRoot() {
         return root;
