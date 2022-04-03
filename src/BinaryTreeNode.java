@@ -4,6 +4,10 @@ public class BinaryTreeNode<E extends Number> implements Comparable<BinaryTreeNo
     private BinaryTreeNode leftChild;
     private BinaryTreeNode rightChild;
 
+    public BinaryTreeNode(E value) {
+        element = value;
+    }
+
     void setElement(E element) {
         this.element = element;
     }
