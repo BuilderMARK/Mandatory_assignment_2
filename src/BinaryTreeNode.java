@@ -3,6 +3,15 @@ public class BinaryTreeNode<E extends Number> implements Comparable<BinaryTreeNo
     private E element;
     private BinaryTreeNode leftChild;
     private BinaryTreeNode rightChild;
+    private BinaryTreeNode parrent;
+
+    public void setParrent(BinaryTreeNode parrent) {
+        this.parrent = parrent;
+    }
+
+    public BinaryTreeNode getParrent() {
+        return parrent;
+    }
 
     public BinaryTreeNode(E value) {
         element = value;
@@ -16,12 +25,14 @@ public class BinaryTreeNode<E extends Number> implements Comparable<BinaryTreeNo
         return element;
     }
 
-    void addLeftChild(BinaryTreeNode v) {
+    void addLeftChild(BinaryTreeNode v, BinaryTreeNode parrent) {
         this.leftChild = v;
+        this.parrent = parrent;
     }
 
-    void addRightChild(BinaryTreeNode v) {
+    void addRightChild(BinaryTreeNode v, BinaryTreeNode parrent) {
         this.rightChild = v;
+        this.parrent = parrent;
     }
 
     public BinaryTreeNode getLeftChild() {
